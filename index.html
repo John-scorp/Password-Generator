@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Images/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Orbitron:wght@400;800&family=Spinnaker&family=Tiro+Tamil:ital@1&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main">
+            <div class="headings">
+                <img src="Images/img/Heading.png">
+                
+            </div>
+            <div>
+                <img src="Images/img//Supporting-text.png">
+            </div>
+            <div>
+                <label for="message">Enter the Password Length</label>
+                <input type="number" id="message" name="message" min="6" max="15">
+            </div>
+            <div>
+                <label for="myBtn">Numbers</label>
+                
+                <input type="button" id="myBtn" value="ON" onclick="tgl();">
+            </div>
+            <div>
+                <label for="myBtn1">Special Characters</label>
+                <input type="button" id="myBtn1" value="ON" onclick="tgl1();">
+            </div>
+            
+            <!-- capture the button click event -->
+            <div>
+                  <button onclick="sadq()">Generate passwords</button> 
+             </div>
+             <div class="line">
+
+             </div>
+
+             <div>
+                <p> Click on the password to Copy</p>
+                <button id="password1-El" onclick="copyContent()">xxxxxx</button>
+                <button  id="password2-El" onclick="copyContent1()">xxxxxx</button>
+             </div>
+       
+        </div> 
+        <script src="Images/index.js"></script>
+    </body>
+</html>
