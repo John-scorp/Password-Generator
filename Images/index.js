@@ -72,12 +72,17 @@ message.addEventListener('input', function ()
 {
      pwdLength = Number(this.value);
      if (pwdLength < 6)
-    {
+    {   
+        window.alert("the number entered is less than 6, The system will automatically assign 6 as paswordlength");
         pwdLength = 6;
-    }
+        message.value = 6;
+        
+    }   
     if (pwdLength > 15)
     {
+        window.alert("the number entered is greater than 15, The system will automatically assign 15 as paswordlength");
         pwdLength = 15;
+        message.value = 15;
     }
   
 });
