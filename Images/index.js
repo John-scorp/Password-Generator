@@ -14,12 +14,12 @@ let copyText2 = "";
 let numbersNil = true;
 let specialCharacters = true;
 // accessing the DOM file 
-let passwordOne = document.getElementById("password1-El");
-let passwordTwo = document.getElementById("password2-El");
+const passwordOne = document.getElementById("password1-El");
+const passwordTwo = document.getElementById("password2-El");
 
 // function to call password generator twice
 function sadq()
-{
+{   
     let result = passwordGen(pwdLength);
     passwordOne.textContent = result;
     
@@ -71,10 +71,18 @@ const result = document.querySelector('#result');
 message.addEventListener('input', function () 
 {
      pwdLength = Number(this.value);
+     if (pwdLength < 6)
+    {
+        pwdLength = 6;
+    }
+    if (pwdLength > 15)
+    {
+        pwdLength = 15;
+    }
   
 });
 
-
+// Copy to Clipboard function
 
 const copyContent = async () => {  
     let text = document.getElementById('password1-El').innerHTML;  
@@ -93,13 +101,12 @@ const copyContent1 = async () => {
     try {  
         await navigator.clipboard.writeText(text); 
         console.log(text) 
-          
         console.log('Content copied to clipboard');  
     } catch (err) {  
         console.error('Failed to copy: ', err);  
     }  
 }
-
+// Toggle function
 function tgl()
 {
 var t = document.getElementById("myBtn");
