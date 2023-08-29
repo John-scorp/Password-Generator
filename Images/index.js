@@ -16,9 +16,10 @@ let specialCharacters = true;
 // accessing the DOM file 
 const passwordOne = document.getElementById("password1-El");
 const passwordTwo = document.getElementById("password2-El");
+const passwordGenerator = document.getElementById("password-geneator");
 
 // function to call password generator twice
-function sadq()
+passwordGenerator.addEventListener("click", function ()
 {   
     let result = passwordGen(pwdLength);
     passwordOne.textContent = result;
@@ -28,7 +29,7 @@ function sadq()
     passwordTwo.textContent = result;
     
     password = "";
-}
+});
 
 // Password geneartor
 
@@ -89,58 +90,103 @@ message.addEventListener('input', function ()
 
 // Copy to Clipboard function
 
-const copyContent = async () => {  
-    let text = document.getElementById('password1-El').innerHTML;  
-   
-    try {  
-        await navigator.clipboard.writeText(text);  
-        console.log(text) 
-        console.log('Content copied to clipboard');  
-    } catch (err) {  
-        console.error('Failed to copy: ', err);  
-    }  
-}  
-const copyContent1 = async () => {  
+const copyButton = document.querySelector('#password1-El'); 
+const copyButton2 = document.querySelector('#password2-El');
+
+copyButton.addEventListener('click', function () { 
+   textCopy("password1-El")
+}); 
+
+copyButton2.addEventListener('click', function () { 
+    textCopy("password2-El")
+ }); 
+
+
+function textCopy(y){
+    const textToCopy = document.getElementById(y).innerHTML; 
+    navigator.clipboard.writeText(textToCopy)  
+    .then(() => {  
+        console.log('Text copied to clipboard');  
+    })  
+    .catch((err) => {  
+        console.error('Failed to copy text: ', err);  
+    }); 
+} 
     
-    let text = document.getElementById('password2-El').innerHTML;  
-    try {  
-        await navigator.clipboard.writeText(text); 
-        console.log(text) 
-        console.log('Content copied to clipboard');  
-    } catch (err) {  
-        console.error('Failed to copy: ', err);  
-    }  
-}
+// const copyContent = async () => {  
+//     const text = document.getElementById('password1-El').innerHTML; 
+   
+//     try {  
+//         await navigator.clipboard.writeText(text);  
+//         console.log(text) 
+//         console.log('Content copied to clipboard');  
+//     } catch (err) {  
+//         console.error('Failed to copy: ', err);  
+//     }  
+// }  
+// const copyContent1 = async () => {  
+    
+//     const text = document.getElementById('password2-El').innerHTML;  
+//     try {  
+//         await navigator.clipboard.writeText(text); 
+//         console.log(text) 
+//         console.log('Content copied to clipboard');  
+//     } catch (err) {  
+//         console.error('Failed to copy: ', err);  
+//     }  
+// }
 // Toggle function
-function tgl()
+const numberBtn = document.getElementById("myBtn");
+const specialBtn = document.getElementById("myBtn1");
+
+numberBtn.addEventListener("click", function (){
+    tgl("myBtn")
+});
+
+specialBtn.addEventListener("click", function (){
+    tgl("myBtn1")
+});
+
+
+function tgl(x)
 {
-var t = document.getElementById("myBtn");
+const t = document.getElementById(x);
 if(t.value=="ON"){
       t.value="OFF";
+      if(x === "myBtn")
+      {
       numbersNil = false;
+    }else{
+        specialCharacters = false;
+    }
       
     }
 else if(t.value=="OFF")
     {
       t.value="ON";
-        numbersNil = true;
+      if(x === "myBtn")
+      {
+      numbersNil = true;
+    }else{
+        specialCharacters = true;
+    }
         
     }
 
 }
-function tgl1()
-{
-var t = document.getElementById("myBtn1");
-if(t.value=="ON"){
-      t.value="OFF";
-      specialCharacters = false;
+// function tgl1()
+// {
+// var t = document.getElementById("myBtn1");
+// if(t.value=="ON"){
+//       t.value="OFF";
+//       specialCharacters = false;
       
-    }
-else if(t.value=="OFF")
-    {
-      t.value="ON";
-      specialCharacters = true;
+//     }
+// else if(t.value=="OFF")
+//     {
+//       t.value="ON";
+//       specialCharacters = true;
         
-    }
+//     }
 
-}
+// }
