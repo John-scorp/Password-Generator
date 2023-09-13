@@ -1,9 +1,9 @@
 {
     "manifest_version": 3,
-    "version": "1.12",
+    "version": "1.15",
     "name": "Password Generator",
     "action": {
         "default_popup": "index.html",
-        "default_icon": "Images/img/DarbarCasino_invert_logo-2.svg"
+        "default_icon": "Images/img/DarbarCasino_favicon_96x96.png"
     }
 }
